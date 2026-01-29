@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         submodules: 'recursive'
 
@@ -39,7 +39,7 @@ jobs:
         tar -czf artifacts/mod-plugins-x86_64.tar.gz -C ~/mod-workdir/x86_64/plugins .
 
     - name: Upload plugins artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: mod-plugins-x86_64
         path: artifacts/mod-plugins-x86_64.tar.gz
