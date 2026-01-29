@@ -23,20 +23,20 @@ jobs:
         automake binutils build-essential cpio libtool libncurses-dev pkg-config python-is-python3 libtool-bin
 
     - name: Bootstrap toolchain
-      run: ./bootstrap.sh x86_64
+      run: ./bootstrap.sh generic-x86_64
 
     - name: Build all plugins
       run: |
         for plugin in plugins/package/*; do
           if [ -d "$plugin" ]; then
-            ./build x86_64 $(basename $plugin)
+            ./build generic-x86_64 $(basename $plugin)
           fi
         done
 
     - name: Package plugins
       run: |
         mkdir -p artifacts
-        tar -czf artifacts/mod-plugins-x86_64.tar.gz -C ~/mod-workdir/x86_64/plugins .
+        tar -czf artifacts/mod-plugins-x86_64.tar.gz -C ~/mod-workdir/generic-x86_64/plugins .
 
     - name: Upload plugins artifact
       uses: actions/upload-artifact@v4
