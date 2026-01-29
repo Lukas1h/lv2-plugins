@@ -121,3 +121,4 @@ VALGRIND=1 ./validate <platform> <plugin-package>
 
 The Camomile integration is under testing phase. Check the [PR notes](https://github.com/moddevices/mod-plugin-builder/pull/28) for more details. 
 
+\nTriggering GitHub Actions workflow.
